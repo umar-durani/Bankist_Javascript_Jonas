@@ -822,4 +822,4 @@ console.log(dogs.filter(checkEatsOkay));
 //----9.
 const dogsCopy = dogs.slice().sort((a, b) => a.curfood - b.recFood);
 console.log(dogsCopy);
-console.log("first commmit");
+console.log('Many firles')
