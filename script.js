@@ -753,3 +753,72 @@ labelBalance.addEventListener("click", () => {
   // const movementUI2 = [...document.querySelectorAll(".movements__value")];
   // console.log(movementUI2);
 });
+
+//----------------- 26. Coding Challenge 04 ------------
+const dogs = [
+  {
+    weight: 22,
+    curfood: 250,
+    owner: ["Basith", "Mudassir", "Alice"],
+  },
+  {
+    weight: 25,
+    curfood: 350,
+    recFood: 120,
+    owner: ["Alice", "Buddy", "Alice"],
+  },
+  { weight: 84, curfood: 150, owner: ["Matilda"] },
+  {
+    weight: 79,
+    curfood: 100,
+    recFood: 40,
+    owner: ["Matilda", "Sarah", "Michael"],
+  },
+];
+//-----1.
+dogs.forEach((dog) => (dog.curfood = Math.trunc(dog.weight ** 0.75 * 28)));
+console.log(dogs);
+
+//-----2.
+const dogSarah = dogs.find((dog) => dog.owner.includes("Sarah"));
+console.log(dogSarah);
+
+//------3.
+console.log(
+  `Sarah dog is eating to ${
+    dogSarah.curfood > dogSarah.recFood ? "much" : "Little"
+  }`
+);
+
+//------4.
+const ownerEattoMuch = dogs
+  .filter((dog) => dog.curfood > dog.recFood)
+  .flatMap((dog) => dog.owner);
+console.log(ownerEattoMuch);
+
+const ownerEattoLittle = dogs
+  .filter((dog) => dog.curfood < dog.recFood)
+  .flatMap((dog) => dog.owner);
+console.log(ownerEattoLittle);
+
+//------5.
+console.log(`${ownerEattoMuch.join(" and ")} dogs are eating to much`);
+console.log(`${ownerEattoLittle.join(" and ")} dogs are eating to Little`);
+
+//------6.
+const somemethod = dogs.some((dog) => dog.curfood === dog.recFood);
+console.log(somemethod);
+
+//------6.
+const checkEatsOkay = (dog) =>
+  dog.curfood > dog.recFood * 0.9 && dog.curfood < dog.recFood * 1.1;
+
+// ---------7.
+console.log(dogs.some(checkEatsOkay));
+
+//-------8.
+console.log(dogs.filter(checkEatsOkay));
+
+//----9.
+const dogsCopy = dogs.slice().sort((a, b) => a.curfood - b.recFood);
+console.log(dogsCopy);
