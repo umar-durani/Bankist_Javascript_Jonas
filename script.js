@@ -632,6 +632,7 @@ const CalcAverageHumanAge = (Ages) =>
 const Arravg1 = CalcAverageHumanAge([1, 2, 1, 3, 5, 6, 10]);
 const Arravg2 = CalcAverageHumanAge([1, 3, 1, 5, 7, 8, 9, 10]);
 console.log(Arravg1, Arravg2);
+console.log(" hello workld is something about that ")
 
 //-------------The Magic of Chaining Method-----------------
 const USD = 1.001;
